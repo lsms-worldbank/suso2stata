@@ -1,0 +1,21 @@
+Package: suso2stata
+Title: Translate Expressions From Survey Solutions Into Their Nearest Equivalent in Stata 
+Version: 0.0.0.9000
+Authors@R: 
+    person("Arthur", "Shaw", , "jashaw2002@gmail.com", role = c("aut", "cre"))
+Description: Translate enablement and validation conditions from 
+    Survey Solutions' dialect of C# into their nearest equivalent in Stata 
+    through intelligent string interpolation.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Imports: 
+    dplyr,
+    glue,
+    purrr,
+    stringr,
+    tibble
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
