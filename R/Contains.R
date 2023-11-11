@@ -12,6 +12,8 @@
 #' @importFrom stringr str_extract str_replace
 #' @importFrom glue glue
 #' @importFrom dplyr case_when
+#' 
+#' @noRd 
 replace_one_Contains_yn <- function(
     suso_expr
 ) {
@@ -124,6 +126,8 @@ replace_Contains_yn <- function(
 #'
 #' @importFrom stringr str_extract str_replace fixed
 #' @importFrom glue glue
+#' 
+#' @noRd 
 replace_one_Contains <- function(
     suso_expr
 ) {
@@ -222,6 +226,8 @@ replace_Contains <- function(
 #' @importFrom stringr str_extract str_split str_replace fixed
 #' @importFrom glue glue
 #' @importFrom dplyr `%>%`
+#' 
+#' @noRd 
 replace_one_ContainsAll <- function(
     suso_expr
 ) {
@@ -334,6 +340,8 @@ replace_ContainsAll <- function(
 #' @importFrom tibble tibble
 #' @importFrom glue glue_data glue_collapse
 #' @importFrom dplyr `%>%`
+#' 
+#' @noRd 
 replace_one_ContainsAny <- function(
     suso_expr
 ) {

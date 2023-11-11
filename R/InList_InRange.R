@@ -11,6 +11,8 @@
 #' 
 #' @importFrom stringr str_extract str_replace
 #' @importFrom glue glue
+#' 
+#' @noRd 
 replace_one_InList <- function(
     suso_expr
 ) {
@@ -132,6 +134,8 @@ replace_InList <- function(
 #' 
 #' @importFrom stringr str_extract str_replace
 #' @importFrom glue glue
+#' 
+#' @noRd 
 replace_one_InRange <- function(
     suso_expr
 ) {
