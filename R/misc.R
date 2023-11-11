@@ -49,6 +49,8 @@ replace_or <- function(
         replacement = "|"
     )
 
+    return(suso_expr_rev)
+
 }
 
 #' Replace SuSo `&&` with Stata `&`
@@ -81,10 +83,12 @@ replace_null <- function(
     suso_expr
 ) {
 
-    suso_expr_rev = stringr::str_replace_all(
+    suso_expr_rev <- stringr::str_replace_all(
         string = suso_expr,
         pattern = "null",
         replacement = "."
     )
+
+    return(suso_expr_rev)
 
 }
