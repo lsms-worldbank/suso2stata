@@ -21,3 +21,10 @@ testthat::test_that("Returns unmodified string if no InList match found", {
     "!M4_Q08.ContainsOnly(10)"
   )
 })
+
+testthat::test_that("Handle vector of length > 1", {
+  testthat::expect_equal(
+    replace_InList(c("M10_Q01 !=1", "!M10_Q06.InList(1,2)", "M10_Q10.InList(1, 2)")),
+    c("M10_Q01 !=1", "!inlist(M10_Q06, 1,2)", "inlist(M10_Q10, 1, 2)")
+  )
+})

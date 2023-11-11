@@ -7,10 +7,10 @@
 replace_ContainsAll(suso_expr)
 }
 \arguments{
-\item{suso_expr}{Character. SuSo enablement or validation condition.}
+\item{suso_expr}{Character vector. SuSo enablement or validation condition.}
 }
 \value{
-Character. If pattern found, modified expression.
+Character vector. If pattern found, modified expression.
 Otherwise, unmodified expression.
 }
 \description{

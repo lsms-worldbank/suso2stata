@@ -80,7 +80,7 @@ replace_one_InList <- function(
 
 }
 
-#' Replace all of SuSo's InList with equivalent Stata inlist
+#' Replace all instances of InList in string
 #' 
 #' @param suso_expr Character. SuSo enablement or validation condition.
 #' 
@@ -90,8 +90,8 @@ replace_one_InList <- function(
 #' @importFrom stringr str_count
 #' @importFrom purrr reduce
 #' 
-#' @export 
-replace_InList <- function(
+#' @noRd 
+replace_all_InList <- function(
     suso_expr
 ) {
 
@@ -118,6 +118,26 @@ replace_InList <- function(
 
     }
 
+}
+
+#' Replace all of SuSo's InList with equivalent Stata inlist
+#' 
+#' @param suso_expr Character vector. SuSo enablement or validation condition.
+#' 
+#' @return Character vector. If pattern found, modified expression. 
+#' Otherwise, unmodified expression.
+#' 
+#' @importFrom purrr map_chr
+#' 
+#' @export 
+replace_InList <- function(
+    suso_expr
+) {
+
+    purrr::map_chr(
+        .x = suso_expr,
+        .f = ~ replace_all_InList(.x)
+    )
 
 }
 
@@ -203,7 +223,7 @@ replace_one_InRange <- function(
 
 }
 
-#' Replace all of SuSo's InRange with equivalent Stata inrange
+#' Replace all instances of InRange in string
 #' 
 #' @param suso_expr Character. SuSo enablement or validation condition.
 #' 
@@ -213,8 +233,8 @@ replace_one_InRange <- function(
 #' @importFrom stringr str_count
 #' @importFrom purrr reduce
 #' 
-#' @export 
-replace_InRange <- function(
+#' @noRd 
+replace_all_InRange <- function(
     suso_expr
 ) {
 
@@ -241,6 +261,26 @@ replace_InRange <- function(
 
     }
 
+}
+
+#' Replace all of SuSo's InRange with equivalent Stata inrange
+#' 
+#' @param suso_expr Character vector. SuSo enablement or validation condition.
+#' 
+#' @return Character vector. If pattern found, modified expression. 
+#' Otherwise, unmodified expression.
+#' 
+#' @importFrom purrr map_chr
+#' 
+#' @export 
+replace_InRange <- function(
+    suso_expr
+) {
+
+    purrr::map_chr(
+        .x = suso_expr,
+        .f = ~ replace_all_InRange(.x)
+    )
 
 }
 

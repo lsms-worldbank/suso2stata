@@ -71,19 +71,13 @@ replace_one_Contains_yn <- function(
 
 }
 
-
-#' Replace all SuSo's Yes.Contains and No.Contains calls with Stata equivalent
-#'
-#' @param suso_expr Character. SuSo enablement or validation condition.
-#'
-#' @return Character. Expression where SuSo content has been replaced with
-#' Stata content.
-#'
+#' Replace all Yes.Contains or No.Contains found in string
+#' 
 #' @importFrom stringr str_count
 #' @importFrom purrr reduce
-#'
-#' @export
-replace_Contains_yn <- function(
+#' 
+#' @noRd 
+replace_all_Contains_yn <- function(
     suso_expr
 ) {
 
@@ -110,6 +104,26 @@ replace_Contains_yn <- function(
 
     }
 
+}
+
+#' Replace all SuSo's Yes.Contains and No.Contains calls with Stata equivalent
+#'
+#' @param suso_expr Character vector. SuSo enablement or validation condition.
+#'
+#' @return Character vector. Expression where SuSo content has been replaced with
+#' Stata content.
+#'
+#' @importFrom purrr map_chr
+#'
+#' @export
+replace_Contains_yn <- function(
+    suso_expr
+) {
+
+    purrr::map_chr(
+        .x = suso_expr,
+        .f = ~ replace_all_Contains_yn(.x)
+    )
 
 }
 
@@ -172,18 +186,13 @@ replace_one_Contains <- function(
 
 }
 
-#' Replace all of SuSo's Contains calls with Stata equivalent
-#'
-#' @param suso_expr Character. SuSo enablement or validation condition.
-#'
-#' @return Character. Expression where SuSo content has been replaced with
-#' Stata content.
-#'
+#' Replace all occurrences of Contains in string
+#' 
 #' @importFrom stringr str_count
 #' @importFrom purrr reduce
-#'
-#' @export
-replace_Contains <- function(
+#' 
+#' @noRd 
+replace_all_Contains <- function(
     suso_expr
 ) {
 
@@ -209,6 +218,28 @@ replace_Contains <- function(
         return(suso_expr_rev)
 
     }
+
+}
+
+
+#' Replace all of SuSo's Contains calls with Stata equivalent
+#'
+#' @param suso_expr Character vector. SuSo enablement or validation condition.
+#'
+#' @return Character vector. Expression where SuSo content has been replaced 
+#' with Stata content.
+#'
+#' @importFrom purrr map_chr
+#'
+#' @export
+replace_Contains <- function(
+    suso_expr
+) {
+
+    purrr::map_chr(
+        .x = suso_expr,
+        .f = ~ replace_all_Contains(.x)
+    )
 
 }
 
@@ -285,18 +316,13 @@ replace_one_ContainsAll <- function(
 
 }
 
-#' Replace all of SuSo's ContainsAll call with Stata equivalent
-#'
-#' @param suso_expr Character. SuSo enablement or validation condition.
-#'
-#' @return Character. If pattern found, modified expression.
-#' Otherwise, unmodified expression.
-#'
+#' Replace all occurences of ContainsAll in string
+#' 
 #' @importFrom stringr str_count
 #' @importFrom purrr reduce
-#'
-#' @export
-replace_ContainsAll <- function(
+#' 
+#' @noRd 
+replace_all_ContainsAll <- function(
     suso_expr
 ) {
 
@@ -322,6 +348,28 @@ replace_ContainsAll <- function(
         return(suso_expr_rev)
 
     }
+
+    
+}
+
+#' Replace all of SuSo's ContainsAll call with Stata equivalent
+#'
+#' @param suso_expr Character vector. SuSo enablement or validation condition.
+#'
+#' @return Character vector. If pattern found, modified expression.
+#' Otherwise, unmodified expression.
+#'
+#' @importFrom purrr map_chr
+#'
+#' @export
+replace_ContainsAll <- function(
+    suso_expr
+) {
+
+    purrr::map_chr(
+        .x = suso_expr,
+        .f = ~ replace_all_ContainsAll(.x)
+    )
 
 }
 
@@ -400,18 +448,20 @@ replace_one_ContainsAny <- function(
 
 }
 
-#' Replace all of SuSo's ContainsAny calls with the Stata equivalent(s)
-#'
+#' Replace all ContainAny occurrences in single string
+#' 
+#' Iterate over all matches in string
+#' 
 #' @param suso_expr Character. SuSo enablement or validation condition.
 #'
-#' @return Character. Expression where SuSo content has been replaced with
-#' Stata content.
-#'
+#' @return Character. If pattern found, modified expression.
+#' Otherwise, unmodified expression.
+#' 
 #' @importFrom stringr str_count
 #' @importFrom purrr reduce
-#'
-#' @export
-replace_ContainsAny <- function(
+#' 
+#' @noRd 
+replace_all_ContainsAny <- function(
     suso_expr
 ) {
 
@@ -437,5 +487,26 @@ replace_ContainsAny <- function(
         return(suso_expr_rev)
 
     }
+
+}
+
+#' Replace all of SuSo's ContainsAny calls with the Stata equivalent(s)
+#'
+#' @param suso_expr Character vector. SuSo enablement or validation condition.
+#'
+#' @return Character vector. Expression where SuSo content has been replaced 
+#' with Stata content.
+#'
+#' @importFrom purrr map_chr
+#'
+#' @export
+replace_ContainsAny <- function(
+    suso_expr
+) {
+
+    purrr::map_chr(
+        .x = suso_expr,
+        .f = ~ replace_all_ContainsAny(.x)
+    )
 
 }

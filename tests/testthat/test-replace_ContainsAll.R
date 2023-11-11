@@ -18,3 +18,10 @@ testthat::test_that("Replaces multiple `.ContainsAll` with Stata equivalent", {
         "(M13_Q04_curr__1 == 1 & M13_Q04_curr__2 == 1) || (M13_Q04_curr__3 == 1 & M13_Q04_curr__5 == 1)"
     )
 })
+
+testthat::test_that("Handles a vector of length > 1", {
+    testthat::expect_equal(
+        replace_ContainsAll(c("var.ContainsAll(1, 2)", "a >= 1")),
+        c("(var__1 == 1 & var__2 == 1)", "a >= 1")
+    )
+})

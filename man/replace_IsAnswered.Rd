@@ -7,7 +7,11 @@
 replace_IsAnswered(suso_expr)
 }
 \arguments{
-\item{suso_expr}{Character. SuSo enablement or validation condition.}
+\item{suso_expr}{Character vector. SuSo enablement or validation condition.}
+}
+\value{
+Character vector. If pattern found, modified expression.
+Otherwise, unmodified expression.
 }
 \description{
 Replace SuSo IsAnswered with Stata mi

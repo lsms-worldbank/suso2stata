@@ -7,11 +7,11 @@
 replace_Contains(suso_expr)
 }
 \arguments{
-\item{suso_expr}{Character. SuSo enablement or validation condition.}
+\item{suso_expr}{Character vector. SuSo enablement or validation condition.}
 }
 \value{
-Character. Expression where SuSo content has been replaced with
-Stata content.
+Character vector. Expression where SuSo content has been replaced
+with Stata content.
 }
 \description{
 Replace all of SuSo's Contains calls with Stata equivalent
