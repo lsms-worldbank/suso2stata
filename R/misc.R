@@ -105,6 +105,40 @@ replace_null <- function(
 
     return(suso_expr_rev)
 
+}
+
+#' Replace `true` and `false` values with `1` and `0`, respectively
+#' 
+#' @param suso_expr Character vector. SuSo enablement or validation condition.
+#' 
+#' @return Character vector. If pattern found, modified expression. 
+#' Otherwise, unmodified expression.
+#' 
+#' @importFrom stringr str_replace_all
+#' 
+#' @export 
+replace_bool <- function(
+    suso_expr
+) {
+
+    # replace `true` with `1`
+    suso_expr_rev <- stringr::str_replace_all(
+        string = suso_expr,
+        pattern = "true",
+        replacement = "1"
+    )
+
+
+    # replace `false` with `0`
+    suso_expr_rev <- stringr::str_replace_all(
+        string = suso_expr_rev,
+        pattern = "false",
+        replacement = "0"
+    )
+
+    return(suso_expr_rev)
+
+}
 
 #' Replace rowcode or roster variable references with row ID variable
 #' 
