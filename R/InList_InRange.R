@@ -29,7 +29,7 @@ replace_one_InList <- function(
         # - method dot
         # - InList() method
         # - parameters inside method
-        pattern = "[A-Za-z0-9_]+?\\.InList\\(.+?\\)"
+        pattern = "[@A-Za-z0-9_]+?\\.InList\\(.+?\\)"
     )
 
     # if pattern found, return modified character string
@@ -42,7 +42,7 @@ replace_one_InList <- function(
         # extract variable from call 
         inlist_var <- stringr::str_extract(
             string = inlist_expr,
-            pattern = "[A-Za-z0-9_]+?(?=\\.)"
+            pattern = "[@A-Za-z0-9_]+?(?=\\.)"
         )
 
         # extract parameters from InList() method
@@ -98,7 +98,7 @@ replace_all_InList <- function(
     # count how many InList are in the expression
     n_matches <- stringr::str_count(
         string = suso_expr, 
-        pattern = "[A-Za-z0-9_]+?\\.InList\\(.+?\\)"
+        pattern = "[@A-Za-z0-9_]+?\\.InList\\(.+?\\)"
     )
 
     if (n_matches == 0) {
@@ -172,7 +172,7 @@ replace_one_InRange <- function(
         # - method dot
         # - InRange() method
         # - parameters inside method
-        pattern = "[A-Za-z0-9_]+?\\.InRange\\(.+?\\)"
+        pattern = "[@A-Za-z0-9_]+?\\.InRange\\(.+?\\)"
     )
 
     # if pattern found, return modified character string
@@ -185,7 +185,7 @@ replace_one_InRange <- function(
         # extract variable from call 
         inrange_var <- stringr::str_extract(
             string = inrange_expr,
-            pattern = "[A-Za-z0-9_]+?(?=\\.)"
+            pattern = "[@A-Za-z0-9_]+?(?=\\.)"
         )
 
         # extract parameters from InRange() method
@@ -241,7 +241,7 @@ replace_all_InRange <- function(
     # count how many InRange are in the expression
     n_matches <- stringr::str_count(
         string = suso_expr, 
-        pattern = "[A-Za-z0-9_]+?\\.InRange\\(.+?\\)"
+        pattern = "[@A-Za-z0-9_]+?\\.InRange\\(.+?\\)"
     )
 
     if (n_matches == 0) {
