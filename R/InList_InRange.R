@@ -101,7 +101,7 @@ replace_all_InList <- function(
         pattern = "[@A-Za-z0-9_]+?\\.InList\\(.+?\\)"
     )
 
-    if (n_matches == 0) {
+    if (is.na(n_matches) | n_matches == 0) {
 
         return(suso_expr)
 
@@ -244,7 +244,7 @@ replace_all_InRange <- function(
         pattern = "[@A-Za-z0-9_]+?\\.InRange\\(.+?\\)"
     )
 
-    if (n_matches == 0) {
+    if (is.na(n_matches) | n_matches == 0) {
 
         return(suso_expr)
 

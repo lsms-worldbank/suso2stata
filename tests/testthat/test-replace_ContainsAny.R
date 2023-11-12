@@ -25,3 +25,10 @@ testthat::test_that("Handles a vector of length > 1", {
         c("(var__1 == 1 | var__2 == 1)", "a >= 1")
     )
 })
+
+testthat::test_that("Handles a NA input", {
+    testthat::expect_equal(
+        replace_ContainsAny(c(NA, "var.ContainsAny(1, 2)", "a >= 1")),
+        c(NA, "(var__1 == 1 | var__2 == 1)", "a >= 1")
+    )
+})

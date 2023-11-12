@@ -18,3 +18,10 @@ testthat::test_that("Handles a vector of length > 1", {
         c("var__1 == 1", "a >= 1")
     )
 })
+
+testthat::test_that("Handle NA inputs", {
+    testthat::expect_equal(
+        replace_Contains_yn(c(NA,"var.Yes.Contains(1)")),
+        c(NA, "var__1 == 1")
+    )
+})

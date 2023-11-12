@@ -87,7 +87,7 @@ replace_all_Contains_yn <- function(
         pattern = "[A-Za-z0-9_]+?\\.(Yes|No)\\.Contains\\(.+?\\)"
     )
 
-    if (n_matches == 0) {
+    if (is.na(n_matches) | n_matches == 0) {
 
         return(suso_expr)
 
@@ -202,7 +202,7 @@ replace_all_Contains <- function(
         pattern = "[A-Za-z0-9_]+?\\.Contains\\(.+?\\)"
     )
 
-    if (n_matches == 0) {
+    if (is.na(n_matches) | n_matches == 0) {
 
         return(suso_expr)
 
@@ -332,7 +332,7 @@ replace_all_ContainsAll <- function(
         pattern = "[A-Za-z0-9_]+?.ContainsAll\\(.+?\\)"
     )
 
-    if (n_matches == 0) {
+    if (is.na(n_matches) | n_matches == 0) {
 
         return(suso_expr)
 
@@ -471,7 +471,7 @@ replace_all_ContainsAny <- function(
         pattern = "[A-Za-z0-9_]+?.ContainsAny\\(.+?\\)"
     )
 
-    if (n_matches == 0) {
+    if (is.na(n_matches) | n_matches == 0) {
 
         return(suso_expr)
 

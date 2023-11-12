@@ -28,3 +28,12 @@ testthat::test_that("Handle vector of length > 1", {
     c("M10_Q01 !=1", "!inlist(M10_Q06, 1,2)", "inlist(M10_Q10, 1, 2)")
   )
 })
+
+testthat::test_that("Handle NA input", {
+  testthat::expect_equal(
+    replace_InList(
+      c(NA, "M10_Q01 !=1", "!M10_Q06.InList(1,2)", "M10_Q10.InList(1, 2)")
+    ),
+    c(NA, "M10_Q01 !=1", "!inlist(M10_Q06, 1,2)", "inlist(M10_Q10, 1, 2)")
+  )
+})
