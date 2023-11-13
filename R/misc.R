@@ -175,3 +175,29 @@ replace_rowcode_with <- function(
     return(suso_expr_rev)
 
 }
+
+#' Replace `self` keyword with variable name
+#' 
+#' @param suso_expr Character vector. SuSo enablement or validation condition.
+#' @param varname Character vector. Variable name to replace `self`
+#' 
+#' @return Character vector. If pattern found, modified expression. 
+#' Otherwise, unmodified expression.
+#' 
+#' @importFrom stringr str_replace fixed
+#' 
+#' @export 
+replace_self <- function(
+    suso_expr,
+    varname
+) {
+
+    suso_expr_rev <- stringr::str_replace_all(
+        string = suso_expr,
+        pattern = stringr::fixed("self"),
+        replacement = varname
+    )
+
+    return(suso_expr_rev)
+
+}
